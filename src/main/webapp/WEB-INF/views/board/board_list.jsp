@@ -13,12 +13,6 @@
 </head>
 <body>
 <c:set var="id" value="${sessionScope.ID}" />
-<c:if test="${id != null}">
-ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ
-</c:if>
-
- 아이디 : ${login.ID}
-  <p>${login.m_num}</p>
 
 <%--  <%@ include file="../include/menu.jsp" %>  --%>
 	<h2>board_list 페이지입니다.</h2>
