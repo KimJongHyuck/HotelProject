@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.hotel.biz.mapper.BoardMapper">
+ 
+    <select resultType="com.hotel.biz.VO.BoardVO" id="BoardList">
+    	select R1.*,b_num, b_title,b_hit,b_writer,b_regdate
+    	 FROM(SELECT * FROM BOARD
+    	<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="searchType=='b_title' and keyword != null and keyword != '' ">
+				AND b_title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='b_content' and keyword != null and keyword != '' ">
+				AND b_content like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='b_writer' and keyword != null and keyword != '' ">
+				AND b_writer like CONCAT('%', #{keyword}, '%')
+			</if>	
+		</trim>  	
+    	 order by b_num desc)
+     	R1
+     	LIMIT #{startList}, #{listSize} 
+    </select>
+ <!-- id는 나중에 DAO에서 사용하기 위해 필요한 값이고, resultType은 쿼리 실행 후 데이터를 BoardVO에 담겠다고 설정한 것이다.
+-->
+
+<!-- 전체 게시글 불러오기 -->
+	<select resultType="int" id="getBoardListCnt">
+		SELECT COUNT(*) AS listCnt
+		FROM board
+		<trim prefix="WHERE" prefixOverrides="AND|OR">
+			<if test="keyword != null and keyword != '' ">
+			<if test="searchType=='b_title'">
+				AND b_title like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='b_content'">
+				AND b_content like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType=='b_writer'">
+				AND b_writer like CONCAT('%', #{keyword}, '%')
+			</if>
+      </if>
+	</trim>
+ 	</select>
+
+    <!-- 글 작성 --> <!-- 글수정 고쳐야함 멤버아이디값 받아와서  -->
+    <insert id="BoardWriter">
+    	INSERT INTO BOARD (b_title, b_content, b_writer, m_num, b_img, b_Thumbimg) 
+    	VALUES (#{b_title},#{b_content},#{b_writer},(SELECT m_num from member where m_num =#{m_num}),
+    	#{b_img},#{b_Thumbimg}) 
+    </insert>
+    <!-- 게시판 조회수 -->
+    <update id="boardHit" parameterType="int">
+    	UPDATE board SET
+    	b_hit = b_hit+1
+    	WHERE b_num = #{b_num}
+    </update>
+    
+     <!--  게시글 상세내용 불러오기  -->
+    <select id="BoardRead" resultType="com.hotel.biz.VO.BoardVO">
+        SELECT b_num,b_title,b_content,b_writer,b_regdate,b_hit,b_img,b_Thumbimg
+        FROM BOARD where b_num = #{b_num}
+    </select>
+    
+     <!--  게시글 수정하기  -->
+    <update id="BoardUpdate">
+        UPDATE BOARD SET b_title=#{b_title}, b_content=#{b_content}, b_img=#{b_img}, b_Thumbimg=#{b_Thumbimg}
+        WHERE b_num = #{b_num}
+    </update>
+    
+    <!-- 게시글 삭제 -->
+    <delete id="BoardDelete">
+        DELETE FROM BOARD WHERE b_num = #{b_num}
+    </delete>
+    
+</mapper>

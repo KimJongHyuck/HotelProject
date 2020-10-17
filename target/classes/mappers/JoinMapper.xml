@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.hotel.biz.mapper.JoinMapper">
+	<!-- 회원가입  -->
+    <insert id="HotelJoin">
+    	INSERT INTO MEMBER (ID, PW, name, phone, address, email) 
+    	VALUES (#{ID},#{PW},#{name},#{phone},#{address},#{email})
+    </insert>
+    
+    <!-- 중복체크  -->
+    <select id="idCheck" resultType="String"> 
+    SELECT count(*) from MEMBER WHERE ID=#{ID}
+     </select>
+     
+    <select id="idCheck2" resultType="MemberVO"> 
+    select * from MEMBER 
+     </select>
+
+    
+    <!-- 로그인  -->
+    
+    <!-- 비밀번호 체크 -->
+    <select id="login" resultType="MemberVO">
+    
+    	select * FROM MEMBER
+    	WHERE ID = #{ID} AND PW = #{PW}
+    
+    </select>
+    
+ 
+</mapper>
