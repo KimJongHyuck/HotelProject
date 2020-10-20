@@ -17,7 +17,7 @@
  <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="index.html" class="logo">
+                <a href="${path}" class="logo">
                     <img src="${path}/resources/images/logo.png" alt="">
                 </a>
                 <div class="hamburger-menu">
