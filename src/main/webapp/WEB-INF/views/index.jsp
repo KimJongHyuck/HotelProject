@@ -18,7 +18,7 @@
         <div class="hero">
             <div class="container">
                 <div class="main-heading">
-                    <h1 class="title">당신이 찾는 호텔</h1>
+                    <h1 class="title">당신이 찾는 텔</h1>
                     <h2 class="subtitle">Global Hotel...</h2>
                 </div>
                 <a href="#" class="btn btn-gradient">
