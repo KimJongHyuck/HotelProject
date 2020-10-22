@@ -7,8 +7,8 @@
 <mapper namespace="com.hotel.biz.mapper.JoinMapper">
 	<!-- 회원가입  -->
     <insert id="HotelJoin">
-    	INSERT INTO MEMBER (ID, PW, name, phone, address, email) 
-    	VALUES (#{ID},#{PW},#{name},#{phone},#{address},#{email})
+    	INSERT INTO MEMBER (ID, PW, name, phone, email) 
+    	VALUES (#{ID},#{PW},#{name},#{phone},#{email})
     </insert>
     
     <!-- 중복체크  -->
@@ -16,20 +16,27 @@
     SELECT count(*) from MEMBER WHERE ID=#{ID}
      </select>
      
-    <select id="idCheck2" resultType="MemberVO"> 
-    select * from MEMBER 
-     </select>
-
-    
-    <!-- 로그인  -->
-    
     <!-- 비밀번호 체크 -->
-    <select id="login" resultType="MemberVO">
-    
-    	select * FROM MEMBER
-    	WHERE ID = #{ID} AND PW = #{PW}
-    
+    <select id="login" resultType="com.hotel.biz.VO.MemberVO">
+    	select * FROM MEMBER WHERE ID = #{ID} AND PW = #{PW}
     </select>
     
- 
+    <!-- 마이페이지  -->
+    <select id="mypage" resultType="com.hotel.biz.VO.MemberVO">
+    	select ID,PW,name,phone,email from MEMBER where ID = #{ID};
+    </select>
+    
+    <update id="updateuser">
+        UPDATE MEMBER SET PW=#{PW}, name=#{name}, email=#{email}, phone=#{phone}
+        WHERE ID = #{ID};
+    </update>
+    
+    <delete id="deleteuser">
+    	DELETE FROM MEMBER WHERE ID=#{ID} AND PW=#{PW};
+    
+    
+    </delete>
+     
+    
+    
 </mapper>

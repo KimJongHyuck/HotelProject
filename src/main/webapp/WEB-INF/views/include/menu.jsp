@@ -7,6 +7,7 @@ value="${pageContext.request.contextPath}" />
 <div style="text-align: center;">
 	<a href="${path}/">main</a>
 	<a href="${path}/board/list.do">게시판</a>
+	<a href="${pageContext.request.contextPath}/login/loginpage.do">로그인</a>
 	
 </div>
 <hr>
