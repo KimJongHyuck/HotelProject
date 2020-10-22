@@ -198,6 +198,7 @@ section{
     z-index: 0;
 }
 
+
 .hero::before{
     content: '';
     position: absolute;
@@ -239,27 +240,26 @@ section{
 }
 
 .community{
-   background-color:  rgba(255, 153, 153,0.8);
-   	top: 15rem;
-   	height: 70rem;
+    background-color: #F5DEB3;
+   	top: 13rem;
+   	height: 78rem;
    	width: 120rem;
     position: absolute;
     padding: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    outline: 4px solid rgba(143,80,251,.8);
-    outline-offset: .5rem;
+    outline: 5px solid #D2691E;
 }
 
 #searchForm{
-	width: 75%;
+	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .form-group{
-	background-color: rgba(0,0,0,0.3);
-	outline: 1px solid rgba(143,80,241,0.8);
+	background-color: #FAF0E6;
+	outline: 1px solid #D2691E;
 }
 
 
@@ -279,19 +279,47 @@ section{
 
 .comuboard{
 
-	height: 85%;
+	height: 88%;
 	
 }
 
 .comuboard table{
-	background-color: rgba(0,0,0,0.3);
-		outline: 1px solid rgba(143,80,241,0.8);
+	background-color: #FAF0E6;
+	outline: 1px solid #D2691E;
 	width: 100%;
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	table-layout: fixed;
 	
+}
+
+.comuboard table tr{
+	height: 26px;
+}
+
+#paginationBox{
+	background-color: #a5a5a5;
+	width: 10%;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+}
+
+#paginationBox ul{
+	list-style:none;
+   	margin-left: auto;
+	margin-right: auto;
+    padding:0;
+}
+
+
+#paginationBox li{
+    margin-left: 10px;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
 }
 
 /*booking section style*/
