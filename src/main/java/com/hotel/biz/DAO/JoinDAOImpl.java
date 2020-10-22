@@ -1,7 +1,6 @@
 package com.hotel.biz.DAO;
 
 
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -31,10 +30,30 @@ public class JoinDAOImpl implements JoinDAO {
 	}
 	
 	@Override
-	public String idCheck(String id) throws Exception{
+	public String idCheck(String ID) throws Exception{
 		
-		return sqlSession.selectOne(namespace+ ".idCheck",id);
+		return sqlSession.selectOne(namespace+ ".idCheck",ID);
 		
 	}
+	
+	@Override 
+	  public void updateuser(MemberVO vo) throws Exception {
+		  
+		  sqlSession.update(namespace+ ".updateuser",vo); 
+	  
+	  
+	  }
+
+
+	@Override
+	public void deleteuser(MemberVO vo) throws Exception {
+		
+		sqlSession.delete(namespace+ ".deleteuser",vo);
+		
+	}
+	
+
+
+
 
 }

@@ -1,5 +1,6 @@
 package com.hotel.biz.service;
 
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -22,10 +23,19 @@ public class LoginServiceImpl implements LoginService {
 	
 
 	@Override
-	public MemberVO login(MemberVO vo) throws Exception {
+	public MemberVO login(String ID,String PW) throws Exception {
 		
-		return loginDAO.login(vo);
+		return loginDAO.login(ID, PW);
 		
 	}
+
+
 	
+	 
+	 
+
+
+	
+
+
 }

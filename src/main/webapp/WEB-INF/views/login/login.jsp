@@ -23,7 +23,7 @@
 		<input type="password" id="PW" name="PW"/>
 	</p>	
 	<p><button type="submit">로그인</button></p>
-	<a href="${path}/user/joinpage.do">회원가입</a>
+	<button type="button" onclick="location.href='${path}/user/joinpage.do' ">회원가입</button>
 
 </form>
     

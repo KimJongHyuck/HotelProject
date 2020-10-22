@@ -33,13 +33,26 @@ public class JoinServiceImpl  implements JoinService{
 	}
 	
 	@Override
-	public String idCheck(String id) throws Exception {
+	public String idCheck(String ID) throws Exception {
 		
-		return joinDAO.idCheck(id);
+		return joinDAO.idCheck(ID);
 		
 	}
 
+	 @Override 
+	  public void updateuser(MemberVO vo) throws Exception {
+	  
+		 joinDAO.updateuser(vo);
+	  
+	  }
 
+
+	@Override
+	public void deleteuser(MemberVO vo) throws Exception {
+		
+		joinDAO.deleteuser(vo);
+		
+	}
 
 
 

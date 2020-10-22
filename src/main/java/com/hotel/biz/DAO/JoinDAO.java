@@ -1,9 +1,7 @@
 package com.hotel.biz.DAO;
 
-import java.util.List;
 
 import com.hotel.biz.VO.MemberVO;
-import com.sun.javafx.collections.MappingChange.Map;
 
 public interface JoinDAO {
 	
@@ -12,10 +10,14 @@ public interface JoinDAO {
 
 	
 	//중복체크
-	public String idCheck(String id) throws Exception;
+	public String idCheck(String ID) throws Exception;
 	
-
 	
-
+	//개인정보 수정
+	public void updateuser(MemberVO vo) throws Exception;
+	
+	
+	//회원탈퇴
+	public void deleteuser(MemberVO vo)throws Exception;
 
 }
