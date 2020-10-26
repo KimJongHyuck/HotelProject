@@ -2,12 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>   
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@page import ="com.hotel.biz.DAO.JoinDAO, com.hotel.biz.VO.MemberVO" %>
+<%@page import ="com.hotel.biz.DAO.JoinDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<% String id = request.getParameter("ID"); 
+<% 
 
+String ID = request.getParameter("ID"); 
+String PW = request.getParameter("PW");
 %>
 
 <!DOCTYPE html>
@@ -18,17 +20,16 @@
 </head>
 <body>
 <jsp:include page="../include/menu.jsp" />
+<form action = "../user/mypageP.do">
+<h1><%=ID %>님 환영합니다.</h1>
+<br>
+<br>
+<input type="submit" value="마이페이지">
+<br>
+<br>
+<button type="button" onclick="location.href='${path}/biz/login/logout.do' ">로그아웃</button>
 
-<%=id %>님 환영합니다. 
+</form>
 
- <script>
-        alert("아이디와 비밀번호를 확인해주세요.");
-        self.location = "/login/login";
-    </script>
-
-<br><br>
-<a href="logout.do">로그아웃</a>
-<br><br>
-<a href="mypage.do">마이페이지</a>
 </body>
 </html>

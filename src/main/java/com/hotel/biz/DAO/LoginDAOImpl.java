@@ -1,5 +1,6 @@
 package com.hotel.biz.DAO;
 
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -22,12 +23,22 @@ public class LoginDAOImpl implements LoginDAO {
 		
 	}
 
-
 	@Override
-	public MemberVO login(MemberVO vo) throws Exception {
-	
-		return sqlSession.selectOne(namespace+".login",vo);
+	public MemberVO login(String ID, String PW) throws Exception {
+		
+		LoginParam param = new LoginParam(ID, PW);
+		
+		return sqlSession.selectOne(namespace+ ".login",param);
+		
 	}
+
 	
+	  
+	 
+
+
+
+
+
 
 }
