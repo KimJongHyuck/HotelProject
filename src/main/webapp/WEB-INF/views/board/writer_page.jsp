@@ -23,33 +23,56 @@ function check(f) {
 }
 </script>
 </head>
-<body>
-    <%@ include file="../include/menu.jsp" %>
-    <h2>writer_page 페이지입니다.</h2>
-    ${login.m_num}
-    
-    <form name="bdto" method="post" action="${path}/board/insert.do" enctype="multipart/form-data" onsubmit = "return check(this);">
-    
-    	<input type="hidden" name="m_num" value="${login.m_num}">
-        <div>제목<input name="b_title" id="title" size="80" placeholder="글 제목 입력"></div>
-        <div>내용<textarea name="b_content" id="content" rows="8" cols="80" placeholder="글 내용 입력"></textarea></div>
-        <div><input type="hidden" name="b_writer" id="writer" value="${login.ID}"></div>
+  <%-- <%@ include file="../include/menu.jsp" %> --%>
+	
+	<body>
 
-		<div class="inputArea">
-			<label for="b_img">이미지</label>
-			 <input type="file" id="b_img"name="file" onchange="setThumbnail(event);" />
-			<div class="select_img">
-				<img src="" />
-			</div>
-			<script>
-				/* 업로드 할 이미지 미리보기  */
-			</script>
-		</div>
-		<div style="width:650px; text-align:center;">
-            <input type="submit" value="확인">
-            <%=request.getRealPath("/") %>
-        </div>
-    </form>
-     <%@ include file="../include/footer.jsp"%>
-</body>
+		<main>
+		<div class="hero">
+			<div class="container">
+				<div class="community">
+				 	    
+				    <form name="bdto" method="post" action="${path}/board/insert.do" enctype="multipart/form-data" onsubmit = "return check(this);">
+				    
+				    	<input type="hidden" name="m_num" value="${login.m_num}">
+				        <div>
+				        	제목
+				        	<input name="b_title" id="title" size="80" placeholder="글 제목 입력">
+				        </div>
+				        <div>
+				        	내용
+				        	<textarea name="b_content" id="content" rows="8" cols="80" placeholder="글 내용 입력">
+				        	
+				        	</textarea>
+				        </div>
+				        <div>
+				        	<input type="hidden" name="b_writer" id="writer" value="${login.ID}">
+				        
+				        </div>
+				
+						<div class="inputArea">
+							<label for="b_img">이미지</label>
+							 <input type="file" id="b_img"name="file" onchange="setThumbnail(event);" />
+							<div class="select_img">
+								<img src="" />
+							</div>
+							<script>
+								/* 업로드 할 이미지 미리보기  */
+							</script>
+						</div>
+					
+				         <input type="submit" value="확인">
+				    <%--         <%=request.getRealPath("/") %>
+				    	 --%>
+				     </form>
+				   
+				     
+			     </div>
+		       </div>
+		    </div>
+	    </main>
+	    
+	 </body>
+
+ <%@ include file="../include/footer.jsp"%>
 </html>

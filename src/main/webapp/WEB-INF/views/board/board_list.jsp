@@ -27,18 +27,11 @@
 					<form id = "searchForm" method="get">
 						<div class="form-group row justify-content-center">
 						
-							<c:if test="${id != null}">
-								ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ
-								</c:if>
-								
-								 아이디 : ${login.ID}
-								  <p>${login.m_num}</p>
-						
-								<select class="form-control form-control-sm" name="searchType" id="searchType">
-									<option value="b_title" <c:out value="${(param.searchType == 'b_title') ? 'selected' : '' }"/>>제목</option>
-									<option value="b_content" <c:out value="${(param.searchType == 'b_content') ? 'selected' : '' }"/>>본문</option>
-									<option value="b_writer" <c:out value="${(param.searchType == 'b_writer') ? 'selected' : '' }"/>>작성자</option>
-								</select>
+							<select class="form-control form-control-sm" name="searchType" id="searchType">
+								<option value="b_title" <c:out value="${(param.searchType == 'b_title') ? 'selected' : '' }"/>>제목</option>
+								<option value="b_content" <c:out value="${(param.searchType == 'b_content') ? 'selected' : '' }"/>>본문</option>
+								<option value="b_writer" <c:out value="${(param.searchType == 'b_writer') ? 'selected' : '' }"/>>작성자</option>
+							</select>
 						
 					
 								<input type="text" class="form-control form-control-sm" name="keyword" id="keyword" value="${param.keyword}">
@@ -46,6 +39,14 @@
 				
 								<button class="btn" name="btnSearch" id="btnSearch" type="submit">검색</button>
 						
+						
+							<c:if test="${login.ID != null}">
+								<p><a href="${path}/board/writer_page">글 쓰기</a></p>				
+							</c:if>
+						
+						
+								
+							
 						</div>
 					</form>
 						<!-- search{e} -->
@@ -53,17 +54,17 @@
 					<div class="comuboard">
 						<table border="1" id="comutable">
 							<tr>
-								<th width=30px>번호</th>
+								<th width=40px>번호</th>
 								<th>제목</th>
 								<th width=80px>글쓴이</th>
-								<th width=80px>작성일자</th>
+								<th width=100px>작성일자</th>
 								<th width=70px>조회수</th>
 							</tr>
 							<c:forEach var="row" items="${list}">
 							<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today" />  
 							<fmt:formatDate value="${row.b_regdate}" pattern="yyyy-MM-dd" var="b_regdate"/>
 							<tr>
-								<td>${row.b_num}</td>
+								<td >${row.b_num}</td>
 								<td><a href="${path}/board/read.do?bno=${row.b_num}">${row.b_title}</a></td>
 								<td>${row.b_writer}</td>
 								<td>
@@ -83,8 +84,6 @@
 						</table>
 					</div>
 					
-					<a href="${path}/board/writer_page">글쓰기</a>
-					
 					<!-- pagination{s} -->
 					<div id="paginationBox">
 						<ul class="pagination">
@@ -96,8 +95,10 @@
 							<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
 				
 								<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
+								
 								<a class="page-link" href="#" onClick="fn_pagination('${idx}',
 								 '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a>
+								 
 								 </li>
 				
 							</c:forEach>
