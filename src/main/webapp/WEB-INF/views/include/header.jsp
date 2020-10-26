@@ -41,7 +41,7 @@
                         <a href="#" class="nav-link">업체소개</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">관리자 페이지</a>
+                        <a href="adminPage.do" class="nav-link">관리자 페이지</a>
                     </li>
                 </ul>
 
