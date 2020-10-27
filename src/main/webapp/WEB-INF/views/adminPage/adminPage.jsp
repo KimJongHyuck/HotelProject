@@ -17,12 +17,18 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet'
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/adminPage.css">
+<link rel="stylesheet" href="../resources/css/adminPage.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-<script src="resources/js/adminPage.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="../resources/js/adminPage.js"></script>
+
 <%@ include file="../include/header.jsp"%>
+
+
+
 </head>
 <body>
 	<div class="table-wrapper" style="margin-top : 150px;">
@@ -57,11 +63,11 @@
 					<th>핸드폰</th>
 					<th>이메일</th>
 					<th>가입일자</th>
-					<th>Action</th>
+					<th>예약 여부</th>
 				</tr>
 			</thead>
 			<tbody id="admindata">
-				<%-- <c:forEach items="${admin}" var="admin">
+				  <c:forEach items="${list}" var="admin">
 					<tr>
 						<td>${ admin.m_num}</td>
 						<td>${ admin.id}</td>
@@ -70,16 +76,37 @@
 						<td>${ admin.email}</td>
 						<td><fmt:formatDate value="${admin.regdate }"
 								pattern="yyyy-MM-dd" /></td>
+						<c:if test="${admin.rv_num > 0 }">
 						<td>
 							<button type="button" class="btn btn-sm manage" id="manage1"
-								data-target="#myModal">관리</button>
+								onclick="rvlist(${admin.rv_num})">예약 중</button>
 						</td>
+						</c:if>
 					</tr>
-				</c:forEach>  --%>
+				</c:forEach>  
 
 			</tbody>
 		</table>
-		 <div class="123" align="center">
+		 <div class="text-center">
+              <ul class="pagination">
+                    <c:if test="${pageMaker.prev}">
+                       <li><a href="${path}/admin/list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+                    </c:if>
+                    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+   	                <li <c:out value="${pageMaker.criteria.page == idx ? 'class=active' : ''}"/>>
+                      <a href="${path}/admin/list${pageMaker.makeSearch(idx)}">${idx}</a>
+                    </li>
+                    </c:forEach>
+                    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                 	  <li><a href="${path}/admin/list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+                        </c:if>
+                      </ul>
+                    </div>
+	</div>
+	
+       
+                 		
+		<!--  <div class="123" align="center">
 			<nav aria-label="Page navigation">
 				<ul class="pagination">
 					<li class="page-item"><a class="page-link" href="#">Previous</a>
@@ -90,8 +117,8 @@
 					<li class="page-item"><a class="page-link" href="#">Next</a></li>
 				</ul>
 			</nav>
-		</div>
-	</div> 
+		</div> -->
+	
 	<div class="table-wrapper">
 		<div class="table-title">
 			<div class="row">

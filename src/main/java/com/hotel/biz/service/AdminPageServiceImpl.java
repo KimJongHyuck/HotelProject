@@ -12,7 +12,9 @@ import com.hotel.biz.DAO.AdminPageDAO;
 import com.hotel.biz.VO.AdminVO;
 import com.hotel.biz.VO.Room_infoVO;
 import com.hotel.biz.VO.Rv_infoVO;
+import com.hotel.biz.common.Criteria;
 import com.hotel.biz.common.Search;
+import com.hotel.biz.common.SearchCriteria;
 
 
 @Service
@@ -22,20 +24,21 @@ public class AdminPageServiceImpl implements AdminPageService {
 	AdminPageDAO adminPageDAO;
 
 	@Override
-	public List<AdminVO> getMemberList() throws Exception {
-		return adminPageDAO.getMemberList();
+	public List<AdminVO> getMemberList(SearchCriteria criteria) throws Exception {
+		return adminPageDAO.getMemberList(criteria);
 	}
 	
+	@Override
+	public int totalCnt(Criteria criteria) {
+		return adminPageDAO.totalCnt(criteria);
+	}
 //	@Override
 //	public int getMemberListCnt(Search search) throws Exception {
 //		return adminPageDAO.getMemberListCnt(search);
 //	}
 
 	// 게시물 상세내용 불러오기
-	@Override
-	public AdminVO adminRead(int m_num) throws Exception {
-		return adminPageDAO.adminRead(m_num);
-	}
+	
 
 	@Override
 	public List<Rv_infoVO> getRv_infoList(int rv_num) throws Exception {
