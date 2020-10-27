@@ -6,11 +6,11 @@
  
 <mapper namespace="com.hotel.biz.mapper.RvMapper">
 
-	<select id="RvList" resultType="com.hotel.biz.VO.rv_info">
+	<select id="RvList" resultType="com.hotel.biz.VO.Rv_infoVO">
         SELECT * FROM RV_INFO ORDER BY RV_NUM ASC
     </select>
     
-    <select id="RmList" resultType="com.hotel.biz.VO.room_infoVO">
+    <select id="RmList" resultType="com.hotel.biz.VO.Room_infoVO">
 		SELECT * FROM ROOM_INFO ORDER BY R_NUM ASC    
     </select>
     
@@ -33,7 +33,7 @@
     </insert>
     
     <!--  예약 상세내용 불러오기  -->
-    <select id="RvRead" resultType="com.hotel.biz.VO.rv_info">
+    <select id="RvRead" resultType="com.hotel.biz.VO.Rv_infoVO">
     	SELECT * FROM RV_INFO WHERE rv_num = #{rv_num}
     </select>
     
