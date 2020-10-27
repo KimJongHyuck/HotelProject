@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.hotel.biz.DAO.RvDAO;
-import com.hotel.biz.VO.room_infoVO;
-import com.hotel.biz.VO.rv_info;
+import com.hotel.biz.VO.Room_infoVO;
+import com.hotel.biz.VO.Rv_infoVO;
 
 @Service
 public class RvServiceImpl implements RvService{
@@ -16,27 +16,27 @@ public class RvServiceImpl implements RvService{
 	RvDAO rvDAO;
 
 	@Override
-	public List<room_infoVO> getlistRm() throws Exception {
+	public List<Room_infoVO> getlistRm() throws Exception {
 		return rvDAO.getlistRm();
 	}
 	
 	@Override
-	public List<rv_info> getlistRv() throws Exception {
+	public List<Rv_infoVO> getlistRv() throws Exception {
 		return rvDAO.getlistRv();
 	}
 
 	@Override
-	public void writeRv(rv_info rv) throws Exception {
+	public void writeRv(Rv_infoVO rv) throws Exception {
 		rvDAO.writeRv(rv);
 	}
 
 	@Override
-	public List<rv_info> readRv(int rvno) throws Exception {
+	public List<Rv_infoVO> readRv(int rvno) throws Exception {
 		return rvDAO.readRv(rvno);
 	}
 
 	@Override
-	public void updateRv(rv_info rv) throws Exception {
+	public void updateRv(Rv_infoVO rv) throws Exception {
 		rvDAO.updateRv(rv);
 	}
 

@@ -20,8 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hotel.biz.VO.BoardVO;
-import com.hotel.biz.VO.rv_info;
-import com.hotel.biz.VO.room_infoVO;
+import com.hotel.biz.VO.Room_infoVO;
+import com.hotel.biz.VO.Rv_infoVO;
 import com.hotel.biz.service.BoardService;
 import com.hotel.biz.service.RvService;
 
@@ -36,8 +36,8 @@ public class RvController {
 	@RequestMapping("rv_list.do")
 	public String getList(Model model) throws Exception {
 		
-		List<rv_info> rvlist = rvService.getlistRv();
-		List<room_infoVO> rmlist = rvService.getlistRm();
+		List<Rv_infoVO> rvlist = rvService.getlistRv();
+		List<Room_infoVO> rmlist = rvService.getlistRm();
 		
 		model.addAttribute("rvlist", rvlist);
 		model.addAttribute("rmlist",rmlist);	
@@ -47,7 +47,7 @@ public class RvController {
 	
 	@RequestMapping(value="rv_insert.do", method=RequestMethod.POST)
 	public String rvWriter(
-			rv_info rv,
+			Rv_infoVO rv,
 			@RequestParam(value="r_num",required=false) int rno
 			)throws Exception{
 		 
@@ -57,13 +57,13 @@ public class RvController {
 	}
 	 
 	@RequestMapping(value="rv_read.do",method=RequestMethod.POST)
-	public @ResponseBody Map<String,Object> rvRead(rv_info rv,
+	public @ResponseBody Map<String,Object> rvRead(Rv_infoVO rv,
 			Model model,
 			@RequestParam(value="rvnum",required=false) int rvno) throws Exception {
-		List<rv_info> rvContentList = new ArrayList<rv_info>();
+		List<Rv_infoVO> rvContentList = new ArrayList<Rv_infoVO>();
 		
 		rvContentList = rvService.readRv(rvno);
-		rv_info rvContent = rvContentList.get(0);
+		Rv_infoVO rvContent = rvContentList.get(0);
 		
 		Map<String,Object> data = new HashMap<>();
 		data.put("rvnum", rvContent.getRv_num());
@@ -79,7 +79,7 @@ public class RvController {
 	
 	
     @RequestMapping(value="rv_update.do", method=RequestMethod.POST)
-    public String rvUpdate(rv_info rv) throws Exception {
+    public String rvUpdate(Rv_infoVO rv) throws Exception {
         rvService.updateRv(rv);
         return "redirect:rv_list.do";
     }
