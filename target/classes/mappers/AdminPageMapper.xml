@@ -7,46 +7,20 @@
 <mapper namespace="com.hotel.biz.mapper.AdminPageMapper">
 
 
-	 <select id="AdminList" resultType="com.hotel.biz.VO.AdminVO">
-		select member.*,
-		rv_info.rv_num from rv_info right outer join member on rv_info.m_num =
-		member.m_num
-	</select> 
-	
-	<!-- <select resultType="com.hotel.biz.VO.AdminVO" id="AdminList">
-    	select member.*,
-		rv_info.rv_num FROM(SELECT * FROM member
-    	
-    	<trim prefix="WHERE" prefixOverrides="AND|OR">
-			<if test="searchType=='m_num' and keyword != null and keyword != '' ">
-				AND b_title like CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="searchType=='m_name' and keyword != null and keyword != '' ">
-				AND b_content like CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="searchType=='id' and keyword != null and keyword != '' ">
-				AND b_writer like CONCAT('%', #{keyword}, '%')
-			</if>	
-		</trim>  	
-    	 order by m_num desc) 
-     	R1
-     	LIMIT #{startList}, #{listSize} 
-    </select> -->
- <!-- id는 나중에 DAO에서 사용하기 위해 필요한 값이고, resultType은 쿼리 실행 후 데이터를 BoardVO에 담겠다고 설정한 것이다.
--->
 
 
- 	
-	<!-- id는 나중에 DAO에서 사용하기 위해 필요한 값이고, resultType은 쿼리 실행 후 데이터를 BoardVO에 담겠다고 
-		설정한 것이다. -->
+	<select id="AdminList" resultType="com.hotel.biz.VO.AdminVO">
+		select member.*, rv_info.rv_num from rv_info right outer join member on
+		rv_info.m_num = member.m_num
+		limit #{pageStart}, #{perPageNum}
+
+	</select>
+	<select id="totalCnt" resultType="int">
+		select count(*) from member
+	</select>
 
 
-	<!-- 게시글 상세내용 불러오기 -->
-	<!-- <select id="AdminRead" resultType="com.hotel.biz.VO.AdminVO"> SELECT 
-		m_num,id,pw,name,phone,address,email FROM MEMBER where m_num = #{m_num} select 
-		member.m_num, member.name, member.id, rv_info.rv_num, rv_info.rv_pcount, 
-		rv_info.r_num,rv_info.rv_indate, rv_info.rv_outdate, rv_info.rv_date from 
-		member inner join rv_info on rv_info.m_num = ${member.m_num} </select> -->
+
 
 	<select id="checklist" resultType="com.hotel.biz.VO.Rv_infoVO"
 		parameterType="List">
@@ -54,12 +28,14 @@
 	</select>
 
 	<select id="roomlist" resultType="com.hotel.biz.VO.Room_infoVO">
-		select * from room_info where r_num= #{r_num};
+		select * from room_info where
+		r_num= #{r_num};
 
 	</select>
 	<select id="roomUpdate"
 		resultType="com.hotel.biz.VO.Room_infoVO" parameterType="Map">
-		update room_info set r_name = #{r_name}, r_price = #{r_price}, r_check =
+		update
+		room_info set r_name = #{r_name}, r_price = #{r_price}, r_check =
 		#{r_check} where r_num = #{r_num};
 
 	</select>
