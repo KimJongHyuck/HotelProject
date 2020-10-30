@@ -19,9 +19,12 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/css/adminPage.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 
 <script src="../resources/js/adminPage.js"></script>
 
@@ -31,7 +34,7 @@
 
 </head>
 <body>
-	<div class="table-wrapper" style="margin-top : 150px;">
+	<div class="table-wrapper" style="margin-top: 90px;">
 		<div class="table-title">
 			<div class="row">
 				<div class="col-sm-6">
@@ -41,15 +44,16 @@
 				</div>
 				<!-- <div class="col-sm-6">
 					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-info active"> <input type="radio"
-							name="status" value="all" checked="checked"> All
-						</label> <label class="btn btn-success"> <input type="radio"
+						<label class="btn btn-success"> <input type="radio"
 							name="status" value="active"> Success
-						</label> <label class="btn btn-warning"> <input type="radio"
+						</label>
+						 <label class="btn btn-info active"> <input type="radio"
+							name="status" value="all" checked="checked"> All
+						</label>  <label class="btn btn-warning"> <input type="radio"
 							name="status" value="inactive"> Waiting
 						</label> <label class="btn btn-danger"> <input type="radio"
 							name="status" value="expired"> Cancel
-						</label>
+						</label> 
 					</div>
 				</div> -->
 			</div>
@@ -67,7 +71,7 @@
 				</tr>
 			</thead>
 			<tbody id="admindata">
-				  <c:forEach items="${list}" var="admin">
+				<c:forEach items="${list}" var="admin">
 					<tr>
 						<td>${ admin.m_num}</td>
 						<td>${ admin.id}</td>
@@ -77,48 +81,39 @@
 						<td><fmt:formatDate value="${admin.regdate }"
 								pattern="yyyy-MM-dd" /></td>
 						<c:if test="${admin.rv_num > 0 }">
-						<td>
-							<button type="button" class="btn btn-sm manage" id="manage1"
-								onclick="rvlist(${admin.rv_num})">예약 중</button>
-						</td>
+							<td>
+								<button type="button" class="btn btn-success" id="manage1"
+									onclick="rvlist(${admin.rv_num})">예약 중</button>
+							</td>
 						</c:if>
 					</tr>
-				</c:forEach>  
+				</c:forEach>
 
 			</tbody>
 		</table>
-		 <div class="text-center">
-              <ul class="pagination">
-                    <c:if test="${pageMaker.prev}">
-                       <li><a href="${path}/admin/list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
-                    </c:if>
-                    <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-   	                <li <c:out value="${pageMaker.criteria.page == idx ? 'class=active' : ''}"/>>
-                      <a href="${path}/admin/list${pageMaker.makeSearch(idx)}">${idx}</a>
-                    </li>
-                    </c:forEach>
-                    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                 	  <li><a href="${path}/admin/list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
-                        </c:if>
-                      </ul>
-                    </div>
-	</div>
-	
-       
-                 		
-		<!--  <div class="123" align="center">
-			<nav aria-label="Page navigation">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Previous</a>
+		<div class="text-center">
+			<ul class="pagination">
+				<c:if test="${pageMaker.prev}">
+					<li><a
+						href="${path}/admin/list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}"
+					var="idx">
+					<li
+						<c:out value="${pageMaker.criteria.page == idx ? 'class=active' : ''}"/>>
+						<a href="${path}/admin/list${pageMaker.makeSearch(idx)}">${idx}</a>
 					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
-				</ul>
-			</nav>
-		</div> -->
-	
+				</c:forEach>
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li><a
+						href="${path}/admin/list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+				</c:if>
+			</ul>
+		</div>
+	</div>
+
+
+
 	<div class="table-wrapper">
 		<div class="table-title">
 			<div class="row">
@@ -147,8 +142,8 @@
 			</tbody>
 
 		</table>
-		
-	
+
+
 	</div>
 	<div class="modal fade" id="myModal">
 		<div class="modal-dialog">
@@ -160,40 +155,40 @@
 				</div>
 
 				<form id="roomform">
-					<div class="modal-body" id="roomli">
-
-						<!-- <div class="row my-3">
-
-							<label for="name" id="modallabel">방 번호</label><br /> <input
-								type="text" class="form-control pl-5" value="asdasd" />
-						</div>
-						<div class="row my-3">
-							<label for="name" id="modallabel">방 가격</label><br /> <input
-								type="text" class="form-control pl-5" value="123213" />
-						</div>
-
-						<div class="row my-3">
-							<label for="name" id="modallabel">방 이름</label><br /> <input
-								type="text" class="form-control pl-5" value="ddddd" />
-						</div>
-						<div class="row my-3">
-							<label for="name" id="modallabel">예약 확인</label><br /> <input
-								type="text" class="form-control pl-5" id="modalName"
-								value="ddddd" />
-						</div> -->
-
-					</div>
+					<div class="modal-body" id="roomli"></div>
 				</form>
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-success"
 						onclick="roomUpdate()" id="update">update</button>
+			<!-- <button type="button" class="btn btn-success"
+						onclick="roomDelete()" id="delete">delete</button> -->
 					<button type="button" class="btn btn-danger" data-dismiss="modal"
 						id="sex">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<div id="meModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">수정 완료!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">수정 데이터를 확인해보세요.!</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>     
+	
 </body>
 <%@ include file="../include/footer.jsp"%>
 </html>

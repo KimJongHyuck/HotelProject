@@ -52,5 +52,11 @@ public class AdminPageDAOImpl implements AdminPageDAO {
 
 		return sqlSession.selectOne(namespace + ".roomUpdate", room); // BoardMaper의 id 값
 	}
+	// 룸 삭제
+//	@Override
+//	public void roomDelete(int r_num) throws Exception{
+//		
+//		sqlSession.selectOne(namespace + ".roomDelete", r_num);
+//	}
 
 }

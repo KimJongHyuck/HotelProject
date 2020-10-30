@@ -1,6 +1,7 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$(".btn-group .btn").click(function() {
 		var inputValue = $(this).find("input").val();
+		console.log(inputValue);
 		if (inputValue != "all") {
 			var target = $('table tr[data-status="' + inputValue + '"]');
 			$("table tbody tr").not(target).hide();
@@ -10,63 +11,69 @@ $(document).ready(function() {
 		}
 	});
 
-});
+});*/
+
+/*var articleNo = 1000;
+getList();
+function getList() {
+	
+	$.getJSON("admin/list/", function(data) {
+		console.log(data)
+	})
+};*/
+
+//		$.ajax({
+//			type : "get",
+//			url : "admin",
+//			dataType : "json",
+//			 cache: false,
+//		
+//			// data: JSON.stringify(),
+//			contentType : "application/json; charset=utf-8",
+//			success : function(data) {
+//				var records = data.datas;
+//				console.log("records : " + records);
+//                
+//				
+//				
+//			//	var list = data.datas;
+//			//	console.log("data : " + data.totalCnt) // 7
+//				//console.log("list : " + list.length);
+//				var str = "";
+//				$(list).each(function(index, obj) {
+//					str += "<tr>";
+//					str += "<td>" + obj["m_num"] + "</td>";
+//					str += "<td>" + obj["id"] + "</td>";
+//					str += "<td>" + obj["name"] + "</td>";
+//					str += "<td>" + obj["phone"] + "</td>";
+//					str += "<td>" + obj["email"] + "</td>";
+//					str += "<td>" + obj["regdate"] + "</td>";
+//					if (obj["rv_num"] > 0) {
+////						str += "<td><button type='button' class='btn btn-sm manage' value=" + obj["rv_num"]
+////						+ " onclick='rvlist()' id='eee'>관리</button></td>";		
+//					//	str += "<td>" + "<a href='javascript:rvlist("+ obj["rv_num"] +")'>" +obj["rv_num"] + "</a></td>";
+//						str += "<td>" + "<button type='button' class='btn btn-success'"
+//						+ "onclick='rvlist(" +obj["rv_num"]+ ");'>Success</button></td>";
+//
+//					}
+//					str += "</tr>";
+//					
+//				});
+//
+//				//console.log("str : " + str);
+//				$("#admindata").append(str);
+//			
+//
+//			//	selectDataList();
+//			},
+//			error : function(request, status, error) {
+//				var msg = "ERROR : " + request.status + "<br>"
+//				msg += +"내용 : " + request.responseText + "<br>" + error;
+//				console.log(msg);
+//			}
+//		});
 
 
-
-/*$(document).ready(function(){
-		$.ajax({
-			type : "get",
-			url : "adminPage.do",
-			dataType : "json",
-			 cache: false,
-		
-			// data: JSON.stringify(),
-			contentType : "application/json; charset=utf-8",
-			success : function(data) {
-				var records = data.datas;
-				console.log("records : " + records);
-                
-				
-				
-			//	var list = data.datas;
-			//	console.log("data : " + data.totalCnt) // 7
-				//console.log("list : " + list.length);
-				var str = "";
-				$(list).each(function(index, obj) {
-					str += "<tr>";
-					str += "<td>" + obj["m_num"] + "</td>";
-					str += "<td>" + obj["id"] + "</td>";
-					str += "<td>" + obj["name"] + "</td>";
-					str += "<td>" + obj["phone"] + "</td>";
-					str += "<td>" + obj["email"] + "</td>";
-					str += "<td>" + obj["regdate"] + "</td>";
-					if (obj["rv_num"] > 0) {
-//						str += "<td><button type='button' class='btn btn-sm manage' value=" + obj["rv_num"]
-//						+ " onclick='rvlist()' id='eee'>관리</button></td>";		
-					//	str += "<td>" + "<a href='javascript:rvlist("+ obj["rv_num"] +")'>" +obj["rv_num"] + "</a></td>";
-						str += "<td>" + "<button type='button' class='btn btn-success'"
-						+ "onclick='rvlist(" +obj["rv_num"]+ ");'>Success</button></td>";
-
-					}
-					str += "</tr>";
-					
-				});
-
-				//console.log("str : " + str);
-				$("#admindata").append(str);
-			
-
-			//	selectDataList();
-			},
-			error : function(request, status, error) {
-				var msg = "ERROR : " + request.status + "<br>"
-				msg += +"내용 : " + request.responseText + "<br>" + error;
-				console.log(msg);
-			}
-		});
-	});
-*/
 function rvlist(rv_num) {
 	$("#rvdataa").empty();
 	//let rv_num = $("#eee").val();
@@ -97,7 +104,7 @@ function rvlist(rv_num) {
 				str += "</tr>";
 			});
 			
-			console.log("str : " + str);
+			//console.log("str : " + str);
 			$("#rvdataa").append(str);
 		},
 		error : function(request, status, error) {
@@ -129,25 +136,25 @@ function roominfo(r_num){
 			$(list).each(function(index, obj) {
 				str += "<div class='row my-3'>";
 				str += "<label for='name' id='modallabel'>방 번호</label><br>"
-				str += "<input type='text' class='form-control pl-5' style='width:92%;' id ='r_num' value=" + obj["r_num"] + " readonly></div>";
+				str += "<input type='text' class='form-control pl-5' style='margin-left:20px;width:87%;' id ='r_num' value=" + obj["r_num"] + " readonly></div>";
 				str += "<div class='row my-3'>";
 				str += "<label for='name' id='modallabel'>방 이름</label><br>"
-				str += "<input type='text' class='form-control pl-5' style='width:92%;' id ='r_name' value=" + obj["r_name"] + "></div>";
+				str += "<input type='text' class='form-control pl-5' style='margin-left:20px;width:87%;' id ='r_name' value=" + obj["r_name"] + "></div>";
 				str += "<div class='row my-3'>";
 				str += "<label for='name' id='modallabel'>방 가격</label><br>"
-				str += "<input type='text' class='form-control pl-5' style='width:92%;' id ='r_price' value=" + obj["r_price"] + "></div>"; 
+				str += "<input type='text' class='form-control pl-5' style='margin-left:20px;width:87%;' id ='r_price' value=" + obj["r_price"] + "></div>"; 
 				str += "<div class='row my-3'>";
 				str += "<label for='name' id='modallabel'>예약확인</label><br>"
 					if (obj["r_check"] == 1) {
-						str += "<input type='text' class='form-control pl-5' style='width:92%;' id ='r_check' value='예약중'></div>";		
+						str += "<input type='text' class='form-control pl-5' style='margin-left:20px;width:87%;' id ='r_check' value='예약중'></div>";		
 					} else {
-						str += "<input type='text' class='form-control pl-5' style='width:92%;' id ='r_check' value='예약 대기 중'></div>";		
+						str += "<input type='text' class='form-control pl-5' style='margin-left:20px;width:87%;' id ='r_check' value='예약 대기 중'></div>";		
 					}
 				str += "</div>";
 
 			});
 			
-			console.log("str : " + str);
+		//	console.log("str : " + str);
 			$("#roomli").append(str);
 		},
 		error : function(request, status, error) {
@@ -159,10 +166,7 @@ function roominfo(r_num){
 }
 
 function roomUpdate() {
-//	let a = "";
-//	if (('#r_check').val().equals() == 예약중) {
-//		a = 1;
-//	}
+
 	let Obj = {"r_num" : $('#r_num').val(),
 			"r_name" : $('#r_name').val(),
 			"r_price" : $('#r_price').val(),
@@ -184,8 +188,8 @@ function roomUpdate() {
 		success : function (data){
 			console.log("성공");
 			
-			
-			$("#sex").click();
+			$('#meModal').modal();
+			$('#myModal').modal('hide');
 			
 		},
 		error : function(request, status, error) {
@@ -197,6 +201,26 @@ function roomUpdate() {
 	});
 };
 
+/*function roomDelete() {
+	let Obj = {"r_num" : $('#r_num').val()};
+	$.ajax({
+		type : "post",
+		url : "roomDelete",
+		data : Obj,
+	//	dataType : "json",
+		contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+		success : function(data) {
+			console.log("성공");
+			$('#myModal').modal("hide");
+			console.log(myModal)
+		},
+		error : function(request, status, error) {
+			var msg = "ERROR : " + request.status + "<br>"
+			msg += +"내용 : " + request.responseText + "<br>" + error;
+			console.log(msg);
+		}
+	});
+};*/
 /*const common = {
 		totalCount : 100, // 데이터 총 개수
 		recordsPerPage : 5, // 페이지 데이터 레코드 개수
