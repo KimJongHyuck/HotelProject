@@ -16,17 +16,16 @@ import com.hotel.biz.common.SearchCriteria;
 
 public interface AdminPageDAO {
 
-	// 게시글 목록 보기
-//	public List<AdminVO> getMemberList(Criteria criteria) throws Exception;
-	
+	// 멤버 리스트
 	List<AdminVO> getMemberList(SearchCriteria criteria) throws Exception;
+	// 총 수 구하기
 	int totalCnt(Criteria criteria);
-	
-
+	// 예약 정보 리스트
 	public List<Rv_infoVO> getRv_infoList(int rv_num) throws Exception;
+	// 룸 정보 리스트
 	public List<Room_infoVO> getRoom_infoList(int r_num) throws Exception;
+	// 룸 업데이트
 	public Map<String, Object> getRoom_update(Map<String, Object> room) throws Exception;
-
-	
-
+	// 룸 삭제
+	/* public void roomDelete(int r_num) throws Exception; */
 }

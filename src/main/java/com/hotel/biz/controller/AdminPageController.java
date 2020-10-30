@@ -40,14 +40,7 @@ public class AdminPageController {
 	@Inject
 	AdminPageService adminPageService;
 
-	
-	/*
-	 * @RequestMapping(value = "adminPage.do", method = RequestMethod.GET) public
-	 * String adminpage(Model model) throws Exception {
-	 * 
-	 * return "adminPage/adminPage"; }
-	 */
-	
+	// 멤버 리스트 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(@ModelAttribute("criteria") SearchCriteria criteria, Model model) throws Exception {
 
@@ -107,7 +100,8 @@ public class AdminPageController {
 //		System.out.println("admindata : " + admindata);
 //		return admindata;
 //	}
-
+	
+	// 예약 정보 리스트
 	@ResponseBody
 	@RequestMapping(value = "/rv_info_list")
 	public Map<String, Object> rv_infoList(@RequestParam("rv_num") int rv_num, Rv_infoVO vo) throws Exception {
@@ -140,7 +134,8 @@ public class AdminPageController {
 		System.out.println("rvdata : " + rvdata);
 		return rvdata;
 	}
-
+	
+	// 룸 정보 리스트
 	@ResponseBody
 	@RequestMapping(value = "room_info_list")
 	public Map<String, Object> room_info_list(@RequestParam("r_num") int r_num, Room_infoVO vo) throws Exception {
@@ -169,6 +164,7 @@ public class AdminPageController {
 		return roomdata;
 	}
 
+	// 룸 업데이트
 	@ResponseBody
 	@RequestMapping("room_update")
 	public Map<String, Object> roomUpdate(@RequestParam(value = "r_num")int r_num,
@@ -198,5 +194,24 @@ public class AdminPageController {
 		return as;
 
 	}
-
+	
+	// 룸 삭제
+//	@ResponseBody
+//	@RequestMapping("/roomDelete")
+//	public Map<String,Object> GoDelete(@RequestParam(value = "r_num")int r_num) throws Exception {
+//		
+//		System.out.println("r_num : "+r_num);
+//		
+//		adminPageService.roomDelete(r_num);
+//		
+//		/*
+//		 * Map<String, Object> roomDelete = new HashMap<>(); roomDelete.put("r_num",
+//		 * r_num);
+//		 * 
+//		 * System.out.println(roomDelete);
+//		 */
+//		
+//		
+//		return null;
+//	}
 }

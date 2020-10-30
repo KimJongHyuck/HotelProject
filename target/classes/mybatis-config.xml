@@ -15,6 +15,6 @@
             <typeAlias type="com.hotel.biz.VO.MemberVO" alias="MemberVO"/>
             <typeAlias type="com.hotel.biz.VO.Rv_infoVO" alias="Rv_infoVO" />
             <typeAlias type="com.hotel.biz.VO.Room_infoVO" alias="Room_infoVO" />
-            
+             <typeAlias type="com.hotel.biz.VO.AdminVO" alias="AdminVO" />
         </typeAliases>
     </configuration>
