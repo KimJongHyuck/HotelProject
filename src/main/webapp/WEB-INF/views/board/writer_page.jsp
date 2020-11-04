@@ -34,7 +34,7 @@ function check(f) {
 				 	    
 				    <form name="bdto" method="post" action="${path}/board/insert.do" enctype="multipart/form-data" onsubmit = "return check(this);">
 				    
-				    	<input type="hidden" name="m_num" value="${login.m_num}">
+				    	<input type="hidden" name="m_num" value="${member.m_num}">
 				        <div>
 				        	제목
 				        	<input name="b_title" id="title" size="80" placeholder="글 제목 입력">
@@ -46,7 +46,7 @@ function check(f) {
 				        	</textarea>
 				        </div>
 				        <div>
-				        	<input type="hidden" name="b_writer" id="writer" value="${login.ID}">
+				        	<input type="hidden" name="b_writer" id="writer" value="${member.id}">
 				        
 				        </div>
 				

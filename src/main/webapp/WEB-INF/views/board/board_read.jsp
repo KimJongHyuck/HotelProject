@@ -50,10 +50,11 @@ function check(f) {
         
     </table>
 	<a href="${path}/board/list.do" class="btn btn-primary">목록</a>
- 	<c:if test="${login.ID == data.b_writer}">
+ 	<c:if test="${member.id == data.b_writer}">
   	<a href="${path}/board/updatepage?bno=${data.b_num}">수정</a>
     <a href="${path}/board/delete.do?bno=${data.b_num}" onclick="return check(this);">삭제</a>
     </c:if>
+    
      <%@ include file="../include/footer.jsp"%>
 </body>
 </html>
