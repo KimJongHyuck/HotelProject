@@ -1,17 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+
+#loginfo{
+	 background-image: url(/biz/resources/images/background.jpg);
+	 background-size: cover;
 }
-.wrap {
+ .wrap {
+ 
 	margin-top: -40px;
     height: 100%;
     width: 100%;
-    background-image: url(/biz/resources/images/background.jpg);
+    
     background-position: center;
-    background-size: cover;
-    position: absolute;
-}
+   /* 
+    position: absolute; */
+} 
 .form-wrap {
 	margin-top: 20px;
     width: 380px;

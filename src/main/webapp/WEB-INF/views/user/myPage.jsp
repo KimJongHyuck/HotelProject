@@ -34,7 +34,7 @@
 
 
 <body>
-
+<section id="loginfo">
 	<div class="table-wrapper" style="margin-top: 90px;">
 		<div class="form-wrap">
 			<br>
@@ -87,6 +87,7 @@
                 <button type="button" class="btn btn-block create-account" id="submit">회원탈퇴</button> -->
             </div>
 		</div>
+		</section>
 <div id="muModal" class="modal fade">
 	<div class="modal-dialog modal-confirm">
 		<div class="modal-content">
@@ -124,4 +125,5 @@
 	</div>
 </div>     
 </body>
+<%@ include file="../include/footer.jsp"%>
 </html>

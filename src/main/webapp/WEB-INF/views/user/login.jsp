@@ -3,7 +3,7 @@
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="/WEB-INF/views/include/header.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +13,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/biz/resources/css/join.css" />
+<%@ include file="/WEB-INF/views/include/header.jsp"%>
 </head>
 <body>
 
-	<section id="contact">
+	<section id="loginfo">
 		<div class="wrap">
 			<div class="form-wrap">
 				<br>
@@ -58,8 +59,11 @@
 
 			</div>
 		</div>
-		
-	
 	</section>
+
+	
+	
+	
 </body>
+<%@ include file="../include/footer.jsp"%>
 </html>

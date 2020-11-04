@@ -18,7 +18,7 @@ function remove() {
 				} else {
 					if (confirm("회원탈퇴하시겠습니까?")) {
 						$("#delForm").submit();
-						$('#meModal2').modal();
+						$('#meModal2').modal('show');
 					}
 
 				}

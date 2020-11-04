@@ -9,10 +9,20 @@
 <%@ page import="com.hotel.biz.DAO.JoinDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel='stylesheet'
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 <link rel="stylesheet" href="/biz/resources/css/join.css" />
 <style>
 #btn{
@@ -68,6 +78,7 @@ left:50px;
 					return false;
 				}else if(idChkVal == "Y"){
 					$("#regForm").submit();
+					$('#muModal').modal('show');
 				}
 			});
 		})
@@ -93,7 +104,7 @@ left:50px;
 <%@ include file="../include/header.jsp" %>
 
 			
-<section id="contact">
+<section id="loginfo">
 		<div class="wrap">
             <div class="form-wrap" style="height: 700px;margin-top: 20px;">
             <br>
@@ -142,12 +153,30 @@ left:50px;
                 
             </div>
         </div>
+	</section>
   
-			</section>
 
-			<!-- Footer -->
-
+		<div id="muModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title">수정 완료!</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center">수정 데이터를 확인해보세요.!</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>
+			</div>
+		</div>
 	</div>
+</div>  
+
+
 
 </body>
+<%@ include file="../include/footer.jsp"%>
 </html>
