@@ -1,16 +1,24 @@
 package com.hotel.biz.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.hotel.biz.VO.MemberVO;
 
 public interface JoinService {
 	
+	// 회원가입
 	void joinhotel(MemberVO vo) throws Exception;
+	// 로그인
+	public MemberVO login(MemberVO vo)throws Exception;
+	// 업데이트
+	 public Map<String, Object> member_update(Map<String, Object> member) throws Exception;
+	// 삭제
+	public void memberDelete(MemberVO vo) throws Exception;
+	// 탈퇴 체크
+	public int passChk(MemberVO vo) throws Exception;
+	// 아이디 중복체크
+	public int idChk(MemberVO vo) throws Exception;
 
-	String idCheck(String ID) throws Exception;
 
-	public void updateuser(MemberVO vo) throws Exception;
-	
-	public void deleteuser(MemberVO vo) throws Exception;
-	
-	
 }

@@ -32,13 +32,6 @@ public class AdminPageServiceImpl implements AdminPageService {
 	public int totalCnt(Criteria criteria) {
 		return adminPageDAO.totalCnt(criteria);
 	}
-//	@Override
-//	public int getMemberListCnt(Search search) throws Exception {
-//		return adminPageDAO.getMemberListCnt(search);
-//	}
-
-	// 게시물 상세내용 불러오기
-	
 
 	@Override
 	public List<Rv_infoVO> getRv_infoList(int rv_num) throws Exception {
@@ -56,5 +49,9 @@ public class AdminPageServiceImpl implements AdminPageService {
 		return adminPageDAO.getRoom_update(param);
 	}
 	
+//	@Override
+//	public void roomDelete(int r_num) throws Exception{
+//		adminPageDAO.roomDelete(r_num);
+//	}
 	
 }

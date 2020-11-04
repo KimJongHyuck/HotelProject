@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <section class="booking">
+      <!--   <section class="booking">
             <div class="container">
                 <form action="" class="book-form">
 
@@ -75,7 +75,7 @@
                     </button>
                 </form>
             </div>
-        </section>
+        </section> -->
 
         <section class="hotels">
             <div class="container">
