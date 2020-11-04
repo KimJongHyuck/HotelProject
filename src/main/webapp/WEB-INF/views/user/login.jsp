@@ -60,15 +60,7 @@
 			</div>
 		</div>
 	</section>
-<<<<<<< HEAD
 
-	
-	
-	
-=======
-	
-	<%@ include file="/WEB-INF/views/include/footer.jsp"%>
->>>>>>> branch 'master' of https://github.com/KimJongHyuck/HotelProject.git
 </body>
 <%@ include file="../include/footer.jsp"%>
 </html>
