@@ -40,7 +40,7 @@
 								<button class="btn" name="btnSearch" id="btnSearch" type="submit">검색</button>
 						
 						
-							<c:if test="${login.ID != null}">
+							<c:if test="${member.id != null}">
 								<p><a href="${path}/board/writer_page">글 쓰기</a></p>				
 							</c:if>
 						
