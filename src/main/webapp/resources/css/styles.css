@@ -620,9 +620,9 @@ section{
 
 @media screen and (min-width: 768px){
     /*Header section styles*/
-   /*  .header{
+    .header{
         height: 6rem;
-    } */
+    } 
     .header.active{
         height: 6rem;
     }
