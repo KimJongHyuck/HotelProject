@@ -85,7 +85,7 @@
                 </h5>
                 <div class="grid">
                     <div class="grid-item featured-hotels">
-                        <img src="resources/images/hotel_astro_resort.jpg" alt="" class="hotel-image">
+                        <img src="${pageContext.request.contextPath}/resources/images/hotel_astro_resort.jpg" alt="" class="hotel-image">
                         <h5 class="hotel-name">Astro Hotel</h5>
                         <span class="hotel-price">From $200/Night</span>
                         <div class="hotel-rating">
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="grid-item featured-hotels">
-                        <img src="resources/images/hotel_the_enchanted_garden.jpg" alt="" class="hotel-image">
+                        <img src="${pageContext.request.contextPath}/resources/images/hotel_the_enchanted_garden.jpg" alt="" class="hotel-image">
                         <h5 class="hotel-name">Enchanted Garden</h5>
                         <span class="hotel-price">From $300/Night</span>
                         <div class="hotel-rating">
@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="grid-item featured-hotels">
-                        <img src="resources/images/hotel_the_paradise.jpg" alt="" class="hotel-image">
+                        <img src="${pageContext.request.contextPath}/resources/images/hotel_the_paradise.jpg" alt="" class="hotel-image">
                         <h5 class="hotel-name">The Paradise</h5>
                         <span class="hotel-price">From $350/Night</span>
                         <div class="hotel-rating">
@@ -178,7 +178,7 @@
                  
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_1.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_1.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -195,7 +195,7 @@
 
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_2.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_2.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -212,7 +212,7 @@
                     
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_3.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_3.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -230,7 +230,7 @@
                     
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_4.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_4.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -248,7 +248,7 @@
                     
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_5.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_5.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -264,7 +264,7 @@
                     </div>
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_6.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_6.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -280,7 +280,7 @@
                     </div>
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_7.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_7.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -296,7 +296,7 @@
                     </div>
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_8.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_8.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -312,7 +312,7 @@
                     </div>
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_9.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_9.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -329,7 +329,7 @@
 
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class="room-image" src="resources/images/room_10.jpg" alt="">
+                            <img class="room-image" src="${pageContext.request.contextPath}/resources/images/room_10.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
@@ -358,7 +358,7 @@
             
                 <div class="contact-content">
                         <div class="traveler-wrap">
-                            <img src="resources/images/traveler.png" alt="">
+                            <img src="${pageContext.request.contextPath}/resources/images/traveler.png" alt="">
                         </div>
                         <form action="" class="form contact-form">
                             <div class="input-group-wrap">
