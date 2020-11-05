@@ -12,7 +12,7 @@ public class Rv_infoVO {
 	private String rv_indate; //입실일        12일 수정 ) 일단 스트링
 	private String rv_outdate; //퇴실일      
 	
-	private Date rv_date; //예약일     
+	private String rv_date; //예약일     
 
 	public int getRv_num() {
 		return rv_num;
@@ -62,11 +62,11 @@ public class Rv_infoVO {
 		this.rv_outdate = rv_outdate;
 	}
 
-	public Date getRv_date() {
+	public String getRv_date() {
 		return rv_date;
 	}
 
-	public void setRv_date(Date rv_date) {
+	public void setRv_date(String rv_date) {
 		this.rv_date = rv_date;
 	}
 
