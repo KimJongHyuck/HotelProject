@@ -72,11 +72,11 @@ public class Rv_infoVO {
 
 	@Override
 	public String toString() {
-		return "rv_info [rv_num=" + rv_num + ", rv_pcount=" + rv_pcount + ", r_num=" + r_num + ", m_num=" + m_num
+		return "Rv_infoVO [rv_num=" + rv_num + ", rv_pcount=" + rv_pcount + ", r_num=" + r_num + ", m_num=" + m_num
 				+ ", rv_indate=" + rv_indate + ", rv_outdate=" + rv_outdate + ", rv_date=" + rv_date + "]";
 	}
+
 	
-		
 	
 	
 }

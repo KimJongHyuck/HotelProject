@@ -124,7 +124,7 @@ public class AdminPageController {
 			data.put("m_num", Integer.toString(d.getM_num()));
 			data.put("rv_indate", d.getRv_indate());
 			data.put("rv_outdate", d.getRv_outdate());
-			data.put("rv_date", sdFormat.format(d.getRv_date()));
+			data.put("rv_date", d.getRv_date());
 
 			dataList.add(data);
 
