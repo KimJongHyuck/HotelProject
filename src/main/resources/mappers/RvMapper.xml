@@ -28,7 +28,7 @@
 	 		#{rv_outdate},
 	 		#{rv_pcount}, 
 	    	#{r_num}, 
-	    	1
+	    	#{m_num}
 	    )
     </insert>
     
