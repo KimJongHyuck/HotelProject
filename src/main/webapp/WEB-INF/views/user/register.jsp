@@ -41,10 +41,10 @@ left:50px;
 		$(document).ready(function(){
 			// 취소
 			
-			var idChkVal = $("#idChk").val();
-				console.log(idChkVal)
+			
 			$("#submit").on("click", function(){
-				
+				var idChkVal = $("#idChk").val();
+				console.log(idChkVal)
 				if($("#id").val()==""){
 					alert("아이디를 입력해주세요.");
 					$("#id").focus();
@@ -72,10 +72,11 @@ left:50px;
 				}
 				
 				if(idChkVal == "N"){
-					console.log(idChkVal)
+					
 					alert("중복확인 버튼을 눌러주세요.");
 					return false;
 				}else if(idChkVal == "Y"){
+					console.log(idChkVal)
 					$("#regForm").submit();
 					$('#muModal').modal('show');
 				}
@@ -93,6 +94,8 @@ left:50px;
 						alert("중복된 아이디입니다.");
 					}else if(data == 0){
 						$("#idChk").attr("value", "Y");
+						var ddd = $("#idChk").val();
+						console.log(ddd)
 						alert("사용가능한 아이디입니다.");
 					}
 				}
