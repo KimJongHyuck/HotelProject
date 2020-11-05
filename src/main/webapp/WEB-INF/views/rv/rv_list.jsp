@@ -8,18 +8,18 @@
 	<meta charset="utf-8" />
   	<title></title>
   	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/popper.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+	<script src="../resources/js/jquery-3.5.1.min.js"></script>
+	<script src="../resources/js/popper.min.js"></script>
+	<script src="../resources/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	
-	<link href='${pageContext.request.contextPath}/resources/calendar/packages/core/main.css' rel='stylesheet' />
-	<link href='${pageContext.request.contextPath}/resources/calendar/packages/daygrid/main.css' rel='stylesheet' />
-	<script src='${pageContext.request.contextPath}/resources/calendar/packages/core/main.js'></script>
-	<script src='${pageContext.request.contextPath}/resources/calendar/packages/interaction/main.js'></script>
-	<script src='${pageContext.request.contextPath}/resources/calendar/packages/list/main.js'></script>
-	<script src='${pageContext.request.contextPath}/resources/calendar/packages/daygrid/main.js'></script>
+	<link href='../resources/calendar/packages/core/main.css' rel='stylesheet' />
+	<link href='../resources/calendar/packages/daygrid/main.css' rel='stylesheet' />
+	<script src='../resources/calendar/packages/core/main.js'></script>
+	<script src='../resources/calendar/packages/interaction/main.js'></script>
+	<script src='../resources/calendar/packages/list/main.js'></script>
+	<script src='../resources/calendar/packages/daygrid/main.js'></script>
 	
 	<script type="text/javascript">
 	
@@ -164,7 +164,6 @@
 		}
 		
 		function readRoom(room_list){
-			console.log("readRoom");
 			<!--select box 초기화 -->
 			$("#reserve_r_num").empty();
 			for(var i=0;i<room_list.length;i++){
@@ -242,8 +241,9 @@
 	  
 	  
 </script>
-<%@ include file="/WEB-INF/views/include/header.jsp"%>
 </head>
+
+ <%@ include file="../include/header.jsp"%>
 
 <div class="content">
   	<!-- Main -->
@@ -367,7 +367,5 @@
 
 	</section>
 </div>
-
-</body>
-
-</html>
+     
+     <%@ include file="../include/footer.jsp"%>
