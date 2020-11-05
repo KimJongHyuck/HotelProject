@@ -17,43 +17,72 @@ function check(f) {
 </script>
 </head>
 <body>
-    <%@ include file="../include/menu.jsp" %>
-    <h2>board_read 페이지입니다.</h2>
-    <a href="${path}/board/writer_page">글쓰기</a>
-    <table border="1">
-        <th> 정보 </th>
-        <th> 데이터 </th>
-        <tr>
-            <td>작성일자</td>
-            <td><fmt:formatDate value="${data.b_regdate}" pattern="yyyy-MM-dd HH:mm" />
-            </td>
+
+
+	<main>
+		<div class="hero">
+			<div class="container">
+				<div class="community">
+		
+		
+		
+	<table border="1" class="b_read_title">
+	
+	    <th width=10%>글 제목</th>
+        <th>${data.b_title} </th>
+        
+	</table>
+	
+	    <table border="1" class="b_read">
+   
+        <tr width=10% height=2%>
+        
+        
+            <td> &nbsp; 글번호: ${data.b_num}</td>
+            
+               <td>&nbsp; 글쓴이:   ${data.b_writer}</td>
+            
+            <td> &nbsp; 작성일자:   <fmt:formatDate value="${data.b_regdate}" pattern="yyyy-MM-dd HH:mm" /></td>
+         
+           
+            
+         
+           
+            <td> &nbsp; 조회수:   ${data.b_hit}</td>
+           
         </tr>
-        <tr>
-            <td>글번호</td><td>${data.b_num}</td>
-        </tr>
-        <tr>
-            <td>글제목</td><td>${data.b_title}</td>
-        </tr>
-        <tr>
-            <td>글내용</td><td>${data.b_content}</td>
-        </tr>
-        <tr><td>글쓴이</td><td>${data.b_writer}</td></tr>
-        <tr><td>조회수</td><td>${data.b_hit}</td></tr>
-      
-        <div class="inputArea">
+        
+     <%--    <div class="inputArea">
  		<label for="b_img">이미지</label>
 		 <p>원본 이미지</p>
 			 <img src="${pageContext.request.contextPath}/${data.b_img}" class=""/>
 		 <p>썸네일</p>
 		 	<img src="${pageContext.request.contextPath}/${data.b_Thumbimg}" class=""/>
-		</div>
+		</div> --%>
         
     </table>
-	<a href="${path}/board/list.do" class="btn btn-primary">목록</a>
+	
+	<div class="b_read_content">
+		
+
+         ${data.b_content}
+      
+ 
+    </div>
+    
+    
+    <div class="b_read_bt">
+	<a href="${path}/board/list.do">목록&nbsp;&nbsp;</a>
  	<c:if test="${member.id == data.b_writer}">
-  	<a href="${path}/board/updatepage?bno=${data.b_num}">수정</a>
+  	<a href="${path}/board/updatepage?bno=${data.b_num}">수정&nbsp;&nbsp;</a>
     <a href="${path}/board/delete.do?bno=${data.b_num}" onclick="return check(this);">삭제</a>
     </c:if>
+    </div>
+    
+    			</div>
+    		</div>
+    	</div>
+    </main>
     
      <%@ include file="../include/footer.jsp"%>
 </body>

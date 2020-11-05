@@ -47,10 +47,9 @@
 					
 
 				
-					<li class="nav-item"><a href="#" class="nav-link">갤러리</a></li>
+					<li class="nav-item"><a href="${path}/rv/rv_list.do" class="nav-link">예약</a></li>
 					<li class="nav-item"><a href="${path}/board/list.do"
 						class="nav-link">커뮤니티</a></li>
-					<li class="nav-item"><a href="#" class="nav-link">업체소개</a></li>
 					<li class="nav-item"><a href="${path}/admin/list" class="nav-link">관리자
 							페이지</a></li>
 				</ul>

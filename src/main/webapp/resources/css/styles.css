@@ -616,6 +616,87 @@ section{
     margin: auto;
 }
 
+
+#insert_form{
+	background-color: #FAF0E6;
+	width: 95%;
+	height: 89%;		
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	padding-top: 0.5rem;
+	outline: 2px solid #000;
+}
+
+#b_title{
+	width: 90%;
+	height: 3rem;
+	margin-bottom: 1.5rem;
+	font-size: 2rem;
+	outline: 1px solid #D2691E;
+}
+
+
+#b_content{
+	width: 90%;
+	height: 50rem;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	outline: 1px solid #D2691E;
+}
+
+#b_submit{
+	text-align: center;
+	font-size: 2rem;
+	width: 60px;
+}
+
+.b_read{
+	text-align:left;
+	
+	background-color: #FAF0E6;		
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1rem;
+	table-layout: fixed;
+	font-size: 1.5rem;
+	border: 2px solid #000;
+	
+}
+
+.b_read_title{
+	background-color: #FAF0E6;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 2rem;
+	font-weight: bold;
+	outline: 2px solid #000;
+}
+
+.b_read_content{
+	text-align:left;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	background-color: #FAF0E6;
+	width: 95%;
+	height: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.7rem;
+	outline: 2px solid #000;
+	
+}
+
+.b_read_bt{
+	font-size: 2rem;
+	
+}
+
+
+
 /*Media queries*/
 
 @media screen and (min-width: 768px){
