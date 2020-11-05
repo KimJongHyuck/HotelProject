@@ -40,13 +40,11 @@ left:50px;
 <script type="text/javascript">
 		$(document).ready(function(){
 			// 취소
-			$(".cencle").on("click", function(){
-				
-				location.href = "/login";
-						    
-			})
-		
+			
+			var idChkVal = $("#idChk").val();
+				console.log(idChkVal)
 			$("#submit").on("click", function(){
+				
 				if($("#id").val()==""){
 					alert("아이디를 입력해주세요.");
 					$("#id").focus();
@@ -72,8 +70,9 @@ left:50px;
 					$("#email").focus();
 					return false;
 				}
-				var idChkVal = $("#idChk").val();
+				
 				if(idChkVal == "N"){
+					console.log(idChkVal)
 					alert("중복확인 버튼을 눌러주세요.");
 					return false;
 				}else if(idChkVal == "Y"){
