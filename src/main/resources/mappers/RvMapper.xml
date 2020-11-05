@@ -28,8 +28,12 @@
 	 		#{rv_outdate},
 	 		#{rv_pcount}, 
 	    	#{r_num}, 
+<<<<<<< HEAD
 	    	#{m_num}
 	    )
+=======
+	    	#{m_num}    )
+>>>>>>> c39222a2d7c8d0c6de7faa1e3fdbc4279c984ff4
     </insert>
     
     <!--  예약 상세내용 불러오기  -->

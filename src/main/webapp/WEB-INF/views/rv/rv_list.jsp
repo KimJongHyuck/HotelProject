@@ -278,7 +278,11 @@
 				        	
 				        	<div class="form-group">
 								<label for="reserve_m_num">회원 번호:</label>
+<<<<<<< HEAD
 							  	<input type="number" class="form-control" name="m_num" id="reserve_m_num" value="${member.m_num}" readonly>
+=======
+							  	<input type="number" class="form-control" name="m_num" id="reserve_m_num" value="${member.m_num }" readonly>
+>>>>>>> c39222a2d7c8d0c6de7faa1e3fdbc4279c984ff4
 							</div>
 						
 							<div class="form-group">

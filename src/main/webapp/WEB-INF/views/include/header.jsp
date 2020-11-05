@@ -42,16 +42,17 @@
 					<a href="${path}/member/logout" class="nav-link">로그아웃</a>
 					</c:if>
 					</li>
-				
-					
-					
-
-				
 					<li class="nav-item"><a href="${path}/rv/rv_list.do" class="nav-link">예약</a></li>
 					<li class="nav-item"><a href="${path}/board/list.do"
 						class="nav-link">커뮤니티</a></li>
-					<li class="nav-item"><a href="${path}/admin/list" class="nav-link">관리자
-							페이지</a></li>
+				
+					<c:if test="${member.m_num == 24 }">
+					<li class="nav-item"><a href="${path}/admin/list" class="nav-link">
+							관리자페이지</a></li>
+					</c:if>
+					
+
+							
 				</ul>
 
 			</nav>
