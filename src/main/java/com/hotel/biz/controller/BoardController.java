@@ -64,19 +64,19 @@ public class BoardController {
 	//게시글 form 데이터 처리
 	@RequestMapping(value="insert.do", method=RequestMethod.POST)
 	public String boardWriter(BoardVO vo, MultipartFile file) throws Exception {
-		String imgUploadPath = uploadPath + File.separator + "imgUpload";
-		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
-		String fileName = null;
-
-		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
-			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath); 
-		} else {
-			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
-		}
-
-		vo.setB_img(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-		vo.setB_Thumbimg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
-		boardService.writerBoard(vo);
+		/*
+		 * String imgUploadPath = uploadPath + File.separator + "imgUpload"; String
+		 * ymdPath = UploadFileUtils.calcPath(imgUploadPath); String fileName = null;
+		 * 
+		 * if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+		 * fileName = UploadFileUtils.fileUpload(imgUploadPath,
+		 * file.getOriginalFilename(), file.getBytes(), ymdPath); } else { fileName =
+		 * uploadPath + File.separator + "images" + File.separator + "none.png"; }
+		 * 
+		 * vo.setB_img(File.separator + "imgUpload" + ymdPath + File.separator +
+		 * fileName); vo.setB_Thumbimg(File.separator + "imgUpload" + ymdPath +
+		 * File.separator + "s" + File.separator + "s_" + fileName);
+		 */boardService.writerBoard(vo);
 		return "redirect:list.do";
 				
 	}
