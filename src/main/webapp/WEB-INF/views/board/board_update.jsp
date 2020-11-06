@@ -14,10 +14,12 @@
 			alert("제목을 입력하세요");
 			f.b_title.focus();
 			return false;
+			
 		} else if (f.b_content.value == "" || f.b_content.value.length == 0) {
 			alert("내용을 입력하세요");
 			f.b_content.focus();
-			return false; 
+			return false;
+			
 		} else {
 			return true;
 		}

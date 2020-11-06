@@ -28,7 +28,8 @@
 	 		#{rv_outdate},
 	 		#{rv_pcount}, 
 	    	#{r_num}, 
-	    	#{m_num}    )
+	    	#{m_num}
+	    	)
     </insert>
     
     <!--  예약 상세내용 불러오기  -->

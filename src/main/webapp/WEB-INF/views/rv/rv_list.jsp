@@ -278,7 +278,7 @@
 				        	
 				        	<div class="form-group">
 								<label for="reserve_m_num">회원 번호:</label>
-							  	<input type="number" class="form-control" name="m_num" id="reserve_m_num" value="${member.m_num }" readonly>
+							  	<input type="number" class="form-control" name="m_num" id="reserve_m_num" value="${member.m_num}" readonly>
 							</div>
 						
 							<div class="form-group">
