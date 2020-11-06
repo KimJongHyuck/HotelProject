@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hotel.biz.mapper.AdminPageMapper">
+
+	<resultMap id="AdminVOMap" type="AdminVO">
+		<id property="m_num" column="m_num" />
+		<result property="id" column="id" />
+		<result property="pw" column="pw" />
+		<result property="name" column="name" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="regdate" column="regdate" />
+
+	</resultMap>
+
+
+	<select id="AdminList" resultMap="AdminVOMap">
+		select member.*, rv_info.rv_num
+		from member left outer
+		join rv_info on member.m_num = rv_info.m_num
+		limit #{pageStart},
+		#{perPageNum}
+
+	</select>
+	<select id="totalCnt" resultType="int">
+		select count(*) from member
+	</select>
+
+	<select id="checklist" resultType="com.hotel.biz.VO.Rv_infoVO"
+		parameterType="List">
+		select * from rv_info where rv_num= #{rv_num};
+	</select>
+
+	<select id="roomlist" resultType="com.hotel.biz.VO.Room_infoVO">
+		select * from room_info where
+		r_num= #{r_num};
+
+	</select>
+	<select id="roomUpdate"
+		resultType="com.hotel.biz.VO.Room_infoVO" parameterType="Map">
+		update
+		room_info set r_name = #{r_name}, r_price = #{r_price}, r_check =
+		#{r_check} where r_num = #{r_num};
+	</select>
+
+
+	<!-- <select id="roomDelete" resultType="com.hotel.biz.VO.Room_infoVO" parameterType="Map"> 
+		delete from room_info where r_num = #{r_num}; </select> -->
+
+
+</mapper>

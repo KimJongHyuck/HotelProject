@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hotel.biz.mapper.JoinMapper">
+	<resultMap id="MemberVOMap" type="MemberVO">
+		<id property="m_num" column="m_num" />
+		<result property="id" column="id" />
+		<result property="pass" column="pass" />
+		<result property="name" column="name" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="regdate" column="regdate" />
+
+	</resultMap>
+	<!-- 회원가입 -->
+	<insert id="HotelJoin">
+		INSERT INTO MEMBER (id, pass, name, phone, email)
+		VALUES (#{id},#{pass},#{name},#{phone},#{email})
+	</insert>
+
+	<select id="login" resultType="com.hotel.biz.VO.MemberVO">
+		select * from member where id = #{id} and pass = #{pass}
+
+	</select>
+
+	<select id="userUpdate" resultType="com.hotel.biz.VO.MemberVO" parameterType="Map">
+		update member set name = #{name}, phone=#{phone},email=#{email} where id = #{id}
+	</select>
+
+	<select id="userDelete" resultType="com.hotel.biz.VO.MemberVO">
+		delete from member where id = #{id} and pass = #{pass}
+
+	</select>
+
+	<select id="passChk" resultType="int">
+		select count(*) from member where id = #{id} and pass = #{pass}
+	</select>
+	<!-- 아이디 중복 체크 -->
+	<select id="idChk" resultType="int">
+	select count(*) from member where id = #{id}
+	</select>
+</mapper>

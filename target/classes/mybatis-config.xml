@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+    <!-- mybatis-config.xml를 보면 <typeAliases> 안에 
+    <typeAlias type="com.hotel.biz.boardVO" alias="boardVO"/> 로 되어있다. 
+    이는 boardMapper.xml에서 boardVO 클래스를 alias 부분에  지정한 이름인 memberVO로 사용하기 위해서이다.
+ -->
+    
+    <configuration>
+ 		<typeAliases>
+            <typeAlias type="com.hotel.biz.VO.BoardVO" alias="BoardVO"/>
+            <typeAlias type="com.hotel.biz.VO.MemberVO" alias="MemberVO"/>
+            <typeAlias type="com.hotel.biz.VO.Rv_infoVO" alias="Rv_infoVO" />
+            <typeAlias type="com.hotel.biz.VO.Room_infoVO" alias="Room_infoVO" />
+             <typeAlias type="com.hotel.biz.VO.AdminVO" alias="AdminVO" />
+        </typeAliases>
+    </configuration>

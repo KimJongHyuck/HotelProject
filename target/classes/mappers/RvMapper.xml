@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.hotel.biz.mapper.RvMapper">
+
+	<select id="RvList" resultType="com.hotel.biz.VO.Rv_infoVO">
+        SELECT * FROM RV_INFO ORDER BY RV_NUM ASC
+    </select>
+    
+    <select id="RmList" resultType="com.hotel.biz.VO.Room_infoVO">
+		SELECT * FROM ROOM_INFO ORDER BY R_NUM ASC    
+    </select>
+    
+    <insert id="RvWriter">
+    	INSERT INTO RV_INFO (
+    		rv_date, 
+    		rv_indate, 
+    		rv_outdate, 
+    		rv_pcount, 
+    		r_num, 
+    		m_num) 
+    	VALUES (
+	 		#{rv_date},
+	 		#{rv_indate},
+	 		#{rv_outdate},
+	 		#{rv_pcount}, 
+	    	#{r_num}, 
+	    	#{m_num}
+	    	)
+    </insert>
+    
+    <!--  예약 상세내용 불러오기  -->
+    <select id="RvRead" resultType="com.hotel.biz.VO.Rv_infoVO">
+    	SELECT * FROM RV_INFO WHERE rv_num = #{rv_num}
+    </select>
+    
+    <!--  예약 수정하기  -->
+    <update id="RvUpdate">
+        UPDATE RV_INFO SET 
+        	rv_date=#{rv_date}, 
+        	rv_indate=#{rv_indate},
+        	rv_outdate=#{rv_outdate},
+        	rv_pcount=#{rv_pcount},
+        	r_num=#{r_num}
+        WHERE rv_num = #{rv_num}
+    </update>
+    
+    <!-- 예약 삭제 -->
+    <delete id="RvDelete">
+        DELETE FROM RV_INFO WHERE rv_num = #{rv_num}
+    </delete>
+    
+    <update id="RoomCheckOn">
+    	UPDATE ROOM_INFO SET
+    		R_CHECK=1
+    	WHERE R_NUM=#{R_NUM}
+    </update>
+    
+    <update id="RoomCheckOff">
+    	UPDATE ROOM_INFO SET
+    		R_CHECK=0
+    	WHERE R_NUM=#{R_NUM}
+    </update>
+</mapper>
