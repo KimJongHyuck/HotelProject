@@ -27,9 +27,7 @@
 	</select>
 
 	<select id="userUpdate" resultType="com.hotel.biz.VO.MemberVO" parameterType="Map">
-		update member set name = #{name}, phone=#{phone},email=#{email} where id =
-		#{id}
-
+		update member set name = #{name}, phone=#{phone},email=#{email} where id = #{id}
 	</select>
 
 	<select id="userDelete" resultType="com.hotel.biz.VO.MemberVO">

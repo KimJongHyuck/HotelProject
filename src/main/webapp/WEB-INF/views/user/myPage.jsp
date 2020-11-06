@@ -77,15 +77,10 @@
 			</form>
 			<div style="float:right;">
 			<button type="button" class="btn btn-success" onclick="update();" > 회원정보수정</button>
-				<button type="button" class="btn btn-success" onclick="remove();" > 회원탈퇴</button>
-				</div>
-			<!-- <button class="btn btn-success" type="submit" id="submit1">회원정보수정</button> -->
-				
-				
-			
-				<!-- <div class="form-group">
-                <button type="button" class="btn btn-block create-account" id="submit">회원탈퇴</button> -->
+			<button type="button" class="btn btn-success" onclick="remove();" > 회원탈퇴</button>
+			</div>
             </div>
+            
 		</div>
 		</section>
 <div id="muModal" class="modal fade">

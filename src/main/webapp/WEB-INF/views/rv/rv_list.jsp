@@ -8,18 +8,18 @@
 	<meta charset="utf-8" />
   	<title></title>
   	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
-	<script src="../resources/js/jquery-3.5.1.min.js"></script>
-	<script src="../resources/js/popper.min.js"></script>
-	<script src="../resources/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.5.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/popper.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	
-	<link href='../resources/calendar/packages/core/main.css' rel='stylesheet' />
-	<link href='../resources/calendar/packages/daygrid/main.css' rel='stylesheet' />
-	<script src='../resources/calendar/packages/core/main.js'></script>
-	<script src='../resources/calendar/packages/interaction/main.js'></script>
-	<script src='../resources/calendar/packages/list/main.js'></script>
-	<script src='../resources/calendar/packages/daygrid/main.js'></script>
+	<link href='${pageContext.request.contextPath}/resources/calendar/packages/core/main.css' rel='stylesheet' />
+	<link href='${pageContext.request.contextPath}/resources/calendar/packages/daygrid/main.css' rel='stylesheet' />
+	<script src='${pageContext.request.contextPath}/resources/calendar/packages/core/main.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/calendar/packages/interaction/main.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/calendar/packages/list/main.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/calendar/packages/daygrid/main.js'></script>
 	
 	<script type="text/javascript">
 	
@@ -273,7 +273,7 @@
 				        	
 				        	<div class="form-group">
 								<label for="reserve_date">예약 날짜:</label>
-							  	<input type="date" class="form-control" name="rv_date" id="reserve_date" readonly>
+							  	<input type="text" class="form-control" name="rv_date" id="reserve_date" readonly>
 							</div>
 				        	
 				        	<div class="form-group">
@@ -283,7 +283,7 @@
 						
 							<div class="form-group">
 								<label for="reserve_pcount">인원:</label>
-							  	<input type="number" class="form-control" name="rv_pcount" id="reserve_pcount" min="1" step="1">
+							  	<input type="number" class="form-control" name="rv_pcount" id="reserve_pcount" value=1 min="1" step="1">
 							</div>
 							
 							<div class="form-group">

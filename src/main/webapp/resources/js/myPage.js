@@ -14,6 +14,7 @@ function remove() {
 				console.log("성공");
 				if (data == 0) {
 					alert("패스워드가 틀렸습니다.");
+					$("#pass").empty();
 					return;
 				} else {
 					if (confirm("회원탈퇴하시겠습니까?")) {
